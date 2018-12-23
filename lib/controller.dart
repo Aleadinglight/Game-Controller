@@ -8,6 +8,7 @@ class Controller extends StatelessWidget{
 
   void _sendMoveLeft(){
     channel.sink.add('Left');
+    print("left");
   }
 
   void _sendMoveRight(){
