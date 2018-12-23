@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: title,
       home: MyHomePage(
         title: title,
-        channel: IOWebSocketChannel.connect('127.0.0.1:3000'),
+        channel: IOWebSocketChannel.connect('ws://192.168.0.100:3000'),
       ),
     );
   }
@@ -73,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _sendMessage() {
     if (_controller.text.isNotEmpty) {
       widget.channel.sink.add(_controller.text);
+      print(_controller.text);
     }
   }
 
