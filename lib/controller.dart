@@ -34,13 +34,28 @@ class Controller extends StatelessWidget{
                 child: new Text("<"),
               ),
             ),
-            new RaisedButton(
-              padding: const EdgeInsets.all(8.0),
-              textColor: Colors.white,
-              color: Colors.red,
-              onPressed: _sendMoveRight,
-              child: new Text(">"),
+            ButtonTheme(
+              minWidth: 100.0,
+              height: 100.0,
+              child: new RaisedButton(
+                padding: const EdgeInsets.all(8.0),
+                textColor: Colors.white,
+                color: Colors.red,
+                onPressed: _sendMoveRight,
+                child: new Text(">"),
+              ),
             ),
+            ButtonTheme(
+              minWidth: 300.0,
+              height: 300.0,
+              child: new RaisedButton(
+                padding: const EdgeInsets.all(8.0),
+                textColor: Colors.white,
+                color: Colors.red,
+                onPressed: _sendMoveLeft,
+                child: new Text("Attack"),
+              ),
+            )
           ],
         ),
       )
