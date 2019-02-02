@@ -1,7 +1,7 @@
 import 'package:web_socket_channel/io.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
+import 'package:game_controller/movingButton.dart';
 class Controller extends StatelessWidget{
 
   final channel = IOWebSocketChannel.connect('ws://192.168.0.100:3000');
@@ -26,16 +26,9 @@ class Controller extends StatelessWidget{
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                ButtonTheme(
-                  minWidth: 100.0,
-                  height: 100.0,
-                  child: new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.white,
-                    color: Colors.red,
-                    onPressed: _sendMoveLeft,
-                    child: new Text("<"),
-                  ),
+                MovingButton( 
+                  name: new Text(">"), 
+                  channel: this.channel,
                 ),
                 ButtonTheme(
                   minWidth: 100.0,

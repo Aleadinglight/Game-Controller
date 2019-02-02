@@ -21,6 +21,15 @@ class MovingButton extends StatelessWidget{
     channel.sink.add('Right');
   }
 
+  void _sendData(Text name){
+    if (name.data == '<'){
+      _sendMoveLeft();
+    }
+    if (name.data == '>'){
+      _sendMoveRight();
+    }
+  }
+
   @override 
   Widget build(BuildContext context) {
     return ButtonTheme(
@@ -30,7 +39,7 @@ class MovingButton extends StatelessWidget{
         padding: const EdgeInsets.all(8.0),
         textColor: Colors.white,
         color: Colors.red,
-        onPressed: _sendMoveLeft,
+        onPressed: () => _sendData(name),
         child: name,
       ),
     );
