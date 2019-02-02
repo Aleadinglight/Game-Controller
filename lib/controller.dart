@@ -4,7 +4,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 class Controller extends StatelessWidget{
 
-  final channel= IOWebSocketChannel.connect('ws://192.168.0.100:3000');
+  final channel = IOWebSocketChannel.connect('ws://192.168.0.100:3000');
 
   void _sendMoveLeft(){
     channel.sink.add('Left');
@@ -20,42 +20,36 @@ class Controller extends StatelessWidget{
     return Scaffold(
       body: 
       new Center(
-        child: new Row(
+        child: new Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            ButtonTheme(
-              minWidth: 100.0,
-              height: 100.0,
-              child: new RaisedButton(
-                padding: const EdgeInsets.all(8.0),
-                textColor: Colors.white,
-                color: Colors.red,
-                onPressed: _sendMoveLeft,
-                child: new Text("<"),
-              ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ButtonTheme(
+                  minWidth: 100.0,
+                  height: 100.0,
+                  child: new RaisedButton(
+                    padding: const EdgeInsets.all(8.0),
+                    textColor: Colors.white,
+                    color: Colors.red,
+                    onPressed: _sendMoveLeft,
+                    child: new Text("<"),
+                  ),
+                ),
+                ButtonTheme(
+                  minWidth: 100.0,
+                  height: 100.0,
+                  child: new RaisedButton(
+                    padding: const EdgeInsets.all(8.0),
+                    textColor: Colors.white,
+                    color: Colors.red,
+                    onPressed: _sendMoveRight,
+                    child: new Text(">"),
+                  ),
+                ),
+              ],
             ),
-            ButtonTheme(
-              minWidth: 100.0,
-              height: 100.0,
-              child: new RaisedButton(
-                padding: const EdgeInsets.all(8.0),
-                textColor: Colors.white,
-                color: Colors.red,
-                onPressed: _sendMoveRight,
-                child: new Text(">"),
-              ),
-            ),
-            ButtonTheme(
-              minWidth: 300.0,
-              height: 300.0,
-              child: new RaisedButton(
-                padding: const EdgeInsets.all(8.0),
-                textColor: Colors.white,
-                color: Colors.red,
-                onPressed: _sendMoveLeft,
-                child: new Text("Attack"),
-              ),
-            )
           ],
         ),
       )
