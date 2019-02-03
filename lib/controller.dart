@@ -26,42 +26,40 @@ class Controller extends StatelessWidget{
             new Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                MovingButton( 
-                  name: new Text("left"), 
-                  channel: this.channel,
+                new Row(
+                  children: <Widget>[
+                    MovingButton( 
+                      name: new Text("Up"), 
+                      channel: this.channel,
+                    ),
+                  ],
+                ),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    MovingButton( 
+                      name: new Text("left"), 
+                      channel: this.channel,
+                    ),
+                    MovingButton( 
+                      name: new Text("down"), 
+                      channel: this.channel,
+                    ),
+                    MovingButton( 
+                      name: new Text("right"), 
+                      channel: this.channel,
+                    ),
+                  ],
                 ),
               ],
             ),
-            // Up and down
-            new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                MovingButton( 
-                  name: new Text("up"), 
-                  channel: this.channel,
-                ),
-                MovingButton(
-                  name: new Text("down"),
-                  channel: this.channel,
-                ),
-              ],
-            ),
-            // Right
-            new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                MovingButton(
-                  name: new Text("right"),
-                  channel: this.channel,
-                ),
-              ],
-            ),
+            
             // attack button
             new Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 MovingButton( 
-                  name: new Text(">"), 
+                  name: new Text("attack"), 
                   channel: this.channel,
                 ),
               ],
