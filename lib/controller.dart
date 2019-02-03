@@ -18,27 +18,25 @@ class Controller extends StatelessWidget{
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-      new Center(
-        child: new Column(
+      body: new Center(
+        child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            new Row(
+            new Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                MovingButton( 
-                  name: new Text(">"), 
-                  channel: this.channel,
-                ),
-                MovingButton(
-                  name: new Text("<"),
-                  channel: this.channel,
-                ),
-              ],
+              children: <Widget>[],
+            ),
+            MovingButton( 
+              name: new Text(">"), 
+              channel: this.channel,
+            ),
+            MovingButton(
+              name: new Text("<"),
+              channel: this.channel,
             ),
           ],
         ),
-      )
+      ),
     );
   }
 }
