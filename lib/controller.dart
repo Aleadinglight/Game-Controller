@@ -30,16 +30,9 @@ class Controller extends StatelessWidget{
                   name: new Text(">"), 
                   channel: this.channel,
                 ),
-                ButtonTheme(
-                  minWidth: 100.0,
-                  height: 100.0,
-                  child: new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.white,
-                    color: Colors.red,
-                    onPressed: _sendMoveRight,
-                    child: new Text(">"),
-                  ),
+                MovingButton(
+                  name: new Text("<"),
+                  channel: this.channel,
                 ),
               ],
             ),
