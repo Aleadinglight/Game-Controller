@@ -24,15 +24,29 @@ class Controller extends StatelessWidget{
           children: <Widget>[
             new Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[],
+              children: <Widget>[
+                MovingButton( 
+                  name: new Text(">"), 
+                  channel: this.channel,
+                ),
+                MovingButton(
+                  name: new Text("<"),
+                  channel: this.channel,
+                ),
+              ],
             ),
-            MovingButton( 
-              name: new Text(">"), 
-              channel: this.channel,
-            ),
-            MovingButton(
-              name: new Text("<"),
-              channel: this.channel,
+            new Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                MovingButton( 
+                  name: new Text(">"), 
+                  channel: this.channel,
+                ),
+                MovingButton(
+                  name: new Text("<"),
+                  channel: this.channel,
+                ),
+              ],
             ),
           ],
         ),
