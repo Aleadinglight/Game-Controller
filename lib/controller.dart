@@ -24,7 +24,7 @@ class Controller extends StatelessWidget{
           children: <Widget>[
             // Left
             new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Row(
                   children: <Widget>[
